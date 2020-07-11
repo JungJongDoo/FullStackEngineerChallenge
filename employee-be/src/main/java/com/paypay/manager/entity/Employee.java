@@ -1,9 +1,12 @@
 package com.paypay.manager.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -24,4 +27,14 @@ public class Employee {
     private String mobileNo;
     private String memberType;
     private String sex;
+
+    @OneToMany(mappedBy = "employeeNo")
+    private List<Review> reviews;
+
+    public int getReviewCount() {
+        if (reviews == null) {
+            return 0;
+        }
+        return reviews.size();
+    }
 }

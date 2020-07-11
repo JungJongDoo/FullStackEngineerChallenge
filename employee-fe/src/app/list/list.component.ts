@@ -10,7 +10,6 @@ import {Observable} from 'rxjs';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
   employees: Observable<Employee[]>;
 
   constructor(private employeeService: EmployeeService,
@@ -41,7 +40,7 @@ export class ListComponent implements OnInit {
         error => alert(JSON.stringify(error.error.message)));
   }
 
-  detail(no: number) {
+  detail(no: number){
     this.router.navigate(['detail', no]);
   }
 }

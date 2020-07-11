@@ -4,4 +4,5 @@ export class Employee {
   name: string;
   mobileNo: string;
   sex: string;
+  reviewCount: number;
 }

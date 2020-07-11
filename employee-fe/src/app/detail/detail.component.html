@@ -15,4 +15,38 @@
   </div>
 </div>
 <br>
-<button (click)="gotoList()">戻る</button><br>
+
+
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <textarea id="contents" cols="50" rows="2" required [(ngModel)]="review.contents" name="contents">
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-info">評価登録</button>
+  </form>
+  <br>
+  <table class="table">
+    <colgroup>
+      <col width="70%">
+      <col width="20%">
+      <col width="10%">
+    </colgroup>
+    <tr style="text-align: center;">
+      <th>内容</th>
+      <th>登録日時</th>
+      <th>操作</th>
+    </tr>
+    <tbody>
+    <tr style="text-align: center;" *ngFor="let review of reviews | async">
+      <td>{{review.contents}}</td>
+      <td>{{review.registerYmdt}}</td>
+      <td>
+        <button (click)="delete(review.no)" class="btn btn-danger">削除</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<button (click)="gotoList()" class="btn btn-info">戻る</button><br>
