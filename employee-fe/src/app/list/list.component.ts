@@ -23,4 +23,25 @@ export class ListComponent implements OnInit {
   refresh() {
     this.employees = this.employeeService.list();
   }
+
+  create(){
+    this.router.navigate(['create']);
+  }
+
+  update(no: number){
+    this.router.navigate(['update', no]);
+  }
+
+  delete(no: number) {
+    this.employeeService.delete(no)
+      .subscribe(
+        data => {
+          this.refresh();
+        },
+        error => alert(JSON.stringify(error.error.message)));
+  }
+
+  detail(no: number) {
+    this.router.navigate(['detail', no]);
+  }
 }

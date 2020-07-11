@@ -6,11 +6,17 @@ import { ListComponent } from './list/list.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { CreateComponent } from './create/create.component';
+import { DetailComponent } from './detail/detail.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    CreateComponent,
+    DetailComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

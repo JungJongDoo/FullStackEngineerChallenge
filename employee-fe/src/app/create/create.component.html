@@ -1,0 +1,27 @@
+<h3>従業員作成</h3>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">お名前</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="name">メールアドレス</label>
+      <input type="email" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="name">電話番号</label>
+      <input type="number" class="form-control" id="mobileNo" required [(ngModel)]="employee.mobileNo" name="mobileNo">
+    </div>
+    <div class="form-group">
+      <label for="name">性別</label><p>
+      <select style='width:100px;height:35px' [(ngModel)]="employee.sex" name="sex" >
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+    <button type="submit">登録</button>
+    <button (click)="gotoList()" style="margin-left: 10px">戻る</button><br>
+  </form>
+</div>
+

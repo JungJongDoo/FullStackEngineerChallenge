@@ -1,5 +1,6 @@
 <div>
   <h5>従業員一覧</h5>
+  <button class="float-right" (click)="create()">従業員登録</button>
   <div>
     <table class="table">
       <tr style="text-align: center;">
@@ -7,6 +8,7 @@
         <th>メールアドレス</th>
         <th>電話番号</th>
         <th>性別</th>
+        <th>操作</th>
       </tr>
       <tbody>
       <tr style="text-align: center;" *ngFor="let employee of employees | async">
@@ -14,6 +16,11 @@
         <td>{{employee.email}}</td>
         <td>{{employee.mobileNo}}</td>
         <td>{{employee.sex}}</td>
+        <td>
+          <button (click)="detail(employee.no)">詳細</button>
+          <button (click)="update(employee.no)" style="margin-left: 10px">更新</button>
+          <button (click)="delete(employee.no)" style="margin-left: 10px">削除</button>
+        </td>
       </tr>
       </tbody>
     </table>

@@ -1,0 +1,18 @@
+<h3>従業員詳細</h3>
+<hr/>
+<div *ngIf="employee">
+  <div>
+    <label><b>お名前：</b></label> {{employee.name}}
+  </div>
+  <div>
+    <label><b>メールアドレス：</b></label> {{employee.email}}
+  </div>
+  <div>
+    <label><b>電話番号：</b></label> {{employee.mobileNo}}
+  </div>
+  <div>
+    <label><b>性別：</b></label> {{employee.sex}}
+  </div>
+</div>
+<br>
+<button (click)="gotoList()">戻る</button><br>
