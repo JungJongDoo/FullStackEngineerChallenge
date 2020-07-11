@@ -1,11 +1,17 @@
 ### 開発環境
+#### BackEnd
 * Java 8
 * Spring Boot
 * Spring Web
 * JPA
 * Lombok
 * Swagger
-* DB:MySql
+#### FrontEnd
+* Angular CLI 9
+### IDE
+* intelliJ
+### DataBase
+* MySql
 
 ### 画面構成
 * TOP画面
